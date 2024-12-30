@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        @for (p of products; track $index) {
+            <img src="{{p.image}}" height="300px" width="auto" alt="{{p.title}}" srcset="">
+            <h1>Title: {{p.title}}</h1>
+            <p>Price: {{p.price}}</p>
+            <p>Discounted Price: {{(p.price - (p.price * p.discount)).toFixed(2)}}</p>
+            @if (p.stock > 0) {
+                <p>Stock Quantity: 
+                    {{p.stock}}</p>
+            }@else {
+                <p>Out Of Stock</p>
+            }
+        }
+    </div>
+</div>
